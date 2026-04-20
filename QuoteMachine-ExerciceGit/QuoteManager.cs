@@ -26,16 +26,20 @@ namespace QuoteMachine_ExerciceGit
             //GetRandomQuote_ShouldReturnNonNullQuote
 
             //Avant de créer votre PR, faites un git rebase sur main pour vous assurer que vous avez la dernière version du code.
-            throw new NotImplementedException("À implémenter dans feature/random-quote");
+            Random randomId = new Random();
+            return _quotes[randomId.Next(3)];
         }
 
         public void AddQuote(string text, string author)
         {
             //Avant de commencer, décommenter le test suivant:
             //AddQuote_ShouldIncreaseQuoteCount
-
             //Avant de créer votre PR, faites un git rebase sur main pour vous assurer que vous avez la dernière version du code.
-            throw new NotImplementedException("À implémenter dans feature/add-quote");
+            if(!string.IsNullOrEmpty(text) && !string.IsNullOrEmpty(author))
+            {
+                _quotes.Add(new Quote { Text = text, Author=author });
+            }
+            // throw new NotImplementedException("À implémenter dans feature/add-quote");
         }
 
         public void SaveToCSVFile(string path)
