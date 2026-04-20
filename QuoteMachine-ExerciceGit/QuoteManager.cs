@@ -20,6 +20,7 @@ namespace QuoteMachine_ExerciceGit
             };
         }
 
+
         public Quote GetRandomQuote()
         {
             //Avant de commencer, décommenter le test suivant:
@@ -44,6 +45,8 @@ namespace QuoteMachine_ExerciceGit
             //SaveToFile_ShouldCreateFile
             //SaveToFile_ShouldThrowIfNotInCSVExtension
 
+            StreamWriter writer = new StreamWriter(path);
+            writer.WriteLine();
             //Avant de créer votre PR, faites un git rebase sur main pour vous assurer que vous avez la dernière version du code.
             throw new NotImplementedException("À implémenter dans feature/save-to-file");
         }
